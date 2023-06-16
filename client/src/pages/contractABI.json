@@ -1,0 +1,249 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "postId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "commentId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "content",
+				"type": "string"
+			}
+		],
+		"name": "CommentCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "postId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "content",
+				"type": "string"
+			}
+		],
+		"name": "PostCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "commentCountByPostId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_postId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_content",
+				"type": "string"
+			}
+		],
+		"name": "createComment",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_content",
+				"type": "string"
+			}
+		],
+		"name": "createPost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_postId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_commentId",
+				"type": "uint256"
+			}
+		],
+		"name": "getComment",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "commentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "content",
+						"type": "string"
+					}
+				],
+				"internalType": "struct SocialMedia.Comment",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_postId",
+				"type": "uint256"
+			}
+		],
+		"name": "getCommentCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "postComments",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "commentId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "content",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "postCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "posts",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "postId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "content",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "commentCount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
