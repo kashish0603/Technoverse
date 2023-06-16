@@ -10,13 +10,12 @@ const SocialMediaDapp = () => {
   const [newCommentContent, setNewCommentContent] = useState('');
 
   useEffect(() => {
-    // Connect to Web3 provider
     const connectToProvider = async () => {
       if (window.ethereum) {
         try {
           const web3 = new Web3(window.ethereum);
           await window.ethereum.enable();
-          const contractAddress = '0x486927bA1C886a5F491e51545bd3B4da2F2BE56f'; // Replace with your contract address
+          const contractAddress = '0x486927bA1C886a5F491e51545bd3B4da2F2BE56f';
           const contract = new web3.eth.Contract(contractABI, contractAddress);
           setWeb3(web3);
           setContract(contract);
@@ -58,7 +57,6 @@ const SocialMediaDapp = () => {
   };
 
   useEffect(() => {
-    // Fetch existing posts
     const fetchPosts = async () => {
       if (contract) {
         const postCount = await contract.methods.postCount().call();
